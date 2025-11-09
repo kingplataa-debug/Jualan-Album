@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IHZAN SOPAN SHOP</title>
+
+  <style>
+    :root {
+      --dark-blue: #0d47a1;
+      --dark-purple: #512da8;
+      --neon-blue: #29b6f6;
+      --neon-purple: #e040fb;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, var(--dark-blue), var(--dark-purple));
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid transparent;
+      padding: 8px 16px;
+      border-radius: 8px;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { border-color: var(--neon-blue); }
+      100% { border-color: var(--neon-purple); }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    .audio-player {
+      margin-top: 30px;
+    }
+
+    audio {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(41, 182, 246, 0.5);
+    }
+
+    .price {
+      margin-top: 25px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      animation: colorShift 4s infinite alternate;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes colorShift {
+      0% { background-color: var(--neon-blue); box-shadow: 0 0 15px var(--neon-blue); }
+      100% { background-color: var(--neon-purple); box-shadow: 0 0 15px var(--neon-purple); }
+    }
+
+    .benefits {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .benefits h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .benefits li {
+      margin: 10px 0;
+      padding: 10px 15px;
+      border: 2px solid var(--neon-blue);
+      border-radius: 8px;
+      transition: border-color 3s;
+      animation: borderColor 3s infinite alternate;
+    }
+
+    @keyframes borderColor {
+      0% { border-color: var(--neon-blue); }
+      100% { border-color: var(--neon-purple); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Ihzan Sopan Shop</h1>
+    <a href="https://wa.me/6285753225113?text=Halo%20Admin%20ihzan%20sopan%20Shop,%20saya%20tertarik%20dengan%20produk%20Anda!"
+      target="_blank">Hubungi WA</a>
+  </header>
+
+  <section class="hero">
+    <h2>🔥 No Comment Ekslusif</h2>
+    <p>Dengarkan preview musik kami dan rasakan vibes-nya sebelum membeli!</p>
+
+    <div class="audio-player">
+      <audio controls src="rip.mp3"></audio>
+    </div>
+
+    <div class="price">Rp 200.000</div>
+    <a class="whatsapp-btn"
+       href="https://wa.me/6285753225113?text=Halo%20Admin,%20saya%20ingin%20beli%20beat%20ini!"
+       target="_blank">Beli Sekarang via WhatsApp</a>
+  </section>
+
+  <section class="benefits">
+    <h3>Apa yang Anda Dapatkan?</h3>
+    <ul>
+      <li>🎵 Lisensi Eksklusif</li>
+      <li>📂 Stem Files (Track Terpisah)</li>
+      <li>💾 Kualitas WAV & MP3</li>
+      <li>🚀 Free Mixing</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Ihzan Sopan Shop | Follow kami di Instagram & YouTube</p>
+  </footer>
+</body>
+</html>

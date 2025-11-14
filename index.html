@@ -4,24 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IHZAN SOPAN SHOP | Premium Beats</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
       /* Tema Dark/Premium: Emas & Hitam Elegan */
-      --primary-dark: #121212; /* Hampir Hitam */
-      --secondary-dark: #1e1e1e; /* Abu-abu Gelap */
-      --accent-gold: #ffc107; /* Emas */
-      --accent-light-gold: #ffd54f; /* Emas Muda */
+      --primary-dark: #121212; 
+      --secondary-dark: #1e1e1e; 
+      --accent-gold: #ffc107; 
+      --accent-light-gold: #ffd54f; 
       --text-light: #e0e0e0;
       --text-dark: #333333;
     }
 
     body {
       margin: 0;
-      /* Mengganti font ke Montserrat untuk kesan premium */
-      font-family: "Montserrat", sans-serif;
-      /* Mengganti background dengan gradien dark yang lebih halus */
+      font-family: "Arial", sans-serif; 
       background-color: var(--primary-dark);
       color: var(--text-light);
       overflow-x: hidden;
@@ -33,7 +30,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 5%;
-      /* Background semi-transparan yang lebih gelap */
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(8px);
       position: sticky;
@@ -44,8 +40,7 @@
 
     header h1 {
       font-size: 1.6em;
-      font-weight: 800;
-      /* Logo dengan sentuhan Emas */
+      font-weight: bold;
       color: var(--accent-gold);
       text-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
     }
@@ -53,7 +48,7 @@
     header a {
       color: var(--accent-gold);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
       border: 1px solid var(--accent-gold);
       padding: 10px 20px;
       border-radius: 4px;
@@ -74,7 +69,7 @@
     .hero h2 {
       font-size: 2.8em;
       margin-bottom: 15px;
-      font-weight: 800;
+      font-weight: bold;
       color: var(--accent-light-gold);
       letter-spacing: 1px;
     }
@@ -85,27 +80,218 @@
       margin-bottom: 40px;
     }
 
-/* --- Pemutar Audio yang Diperbarui (Elegan) --- */
+    /* --- Pemutar Audio KUSTOM (Kotak & Nyatu) --- */
     .audio-player-container {
       margin: 40px auto 30px;
-      width: 90%;
-      max-width: 500px; /* Lebar maksimum 500px */
-      /* Background pemutar yang lebih gelap */
-      background: var(--secondary-dark);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 193, 7, 0.2); /* Sedikit batas emas */
+      width: 150px; /* Lebar dan tinggi dibuat sama */
+      height: 150px; 
+      /* Mengganti secondary-dark dengan gold untuk fokus */
+      background: var(--accent-gold); 
+      border-radius: 15px; /* Sudut lebih membulat */
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.8), 0 4px 15px rgba(0, 0, 0, 0.6);
+      /* Membuat posisi relatif untuk menempatkan tombol di tengah */
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .audio-player-container:hover {
+        transform: scale(1.05);
     }
 
-    /* Menyembunyikan kontrol bawaan dan menyesuaikannya dengan CSS */
+    /* Menyembunyikan elemen audio bawaan, hanya untuk fungsi JS */
     .audio-player-container audio {
-      display: block; /* Pastikan audio memenuhi container */
-      width: 100%;
-      background: none;
+        display: none; 
     }
 
-    /* Menargetkan kontrol bawaan di browser (hanya contoh styling, browser mungkin berbeda) */
+    /* Styling Icon Play/Pause Kustom */
+    .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+        border-left: 40px solid var(--text-dark); /* Tombol Play (segitiga) */
+        transition: border 0.3s;
+    }
+
+    /* Styling Icon Pause Kustom */
+    .audio-player-container.playing .play-icon {
+        width: 15px;
+        height: 50px;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+        /* Membuat dua bar Pause */
+        background-color: var(--text-dark);
+        box-shadow: 20px 0 0 var(--text-dark);
+    }
+    
+    .audio-player-container:after {
+        content: "Tap to Listen";
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        color: var(--text-light);
+        font-size: 0.9em;
+        opacity: 0.8;
+    }
+    .audio-player-container.playing:after {
+        content: "Playing...";
+        color: var(--accent-gold);
+    }
+
+
+    /* Harga */
+    .price {
+      margin-top: 60px; /* Disesuaikan karena ada elemen "Tap to Listen" */
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
+    }
+
+    /* --- Tombol WhatsApp Premium --- */
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: var(--text-dark);
+      text-decoration: none;
+      border-radius: 5px;
+      background-color: var(--accent-gold);
+      box-shadow: 0 0 10px rgba(255, 193, 7, 0.7);
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      background-color: var(--accent-light-gold);
+      box-shadow: 0 5px 15px rgba(255, 193, 7, 0.8);
+    }
+
+    /* --- Benefit List Elegan --- */
+    .benefits {
+      padding: 60px 5%;
+      text-align: center;
+      background-color: var(--secondary-dark); 
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .benefits h3 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: var(--accent-gold);
+    }
+
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .benefits li {
+      flex: 1 1 45%; 
+      min-width: 250px;
+      padding: 15px 20px;
+      border: 1px solid var(--accent-gold);
+      border-left: 5px solid var(--accent-gold);
+      border-radius: 5px;
+      background-color: var(--primary-dark);
+      text-align: left;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .benefits li:hover {
+        background-color: rgba(255, 193, 7, 0.1);
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: var(--primary-dark);
+      margin-top: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    footer p {
+        opacity: 0.7;
+        font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>IHZAN SOPAN SHOP</h1>
+    <a href="https://wa.me/6285753225113?text=Halo%20Admin%20ihzan%20sopan%20Shop,%20saya%20tertarik%20dengan%20produk%20Anda!"
+      target="_blank">Hubungi WA</a>
+  </header>
+
+  <section class="hero">
+    <h2>🔥 Premium Beat: Tabola Bale X Pica Pica X Stecu</h2>
+    <p>Dengarkan preview musik eksklusif dan dapatkan lisensi penuh!</p>
+
+    <div class="audio-player-container" id="customAudioPlayer">
+      <audio id="audioElement" src="rip.mp3"></audio>
+      <div class="play-icon"></div>
+    </div>
+
+    <div class="price">Rp 200.000</div>
+    <a class="whatsapp-btn"
+       href="https://wa.me/6285753225113?text=Halo%20Admin,%20saya%20ingin%20beli%20beat%20ini!"
+       target="_blank">Beli Sekarang via WhatsApp</a>
+  </section>
+
+  <section class="benefits">
+    <h3>Apa yang Anda Dapatkan?</h3>
+    <ul>
+      <li>🎵 Lisensi Eksklusif</li>
+      <li>📂 Stem Files (Track Terpisah)</li>
+      <li>💾 Kualitas WAV & MP3</li>
+      <li>🚀 Free Mixing</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Ihzan Sopan Shop | Follow kami di Instagram & YouTube</p>
+  </footer>
+
+  <script>
+    const playerContainer = document.getElementById('customAudioPlayer');
+    const audio = document.getElementById('audioElement');
+
+    playerContainer.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playerContainer.classList.add('playing');
+      } else {
+        audio.pause();
+        playerContainer.classList.remove('playing');
+      }
+    });
+
+    // Reset tombol jika lagu selesai diputar
+    audio.addEventListener('ended', () => {
+        playerContainer.classList.remove('playing');
+    });
+  </script>
+</body>
+</html> 1    /* Menargetkan kontrol bawaan di browser (hanya contoh styling, browser mungkin berbeda) */
     .audio-player-container audio::-webkit-media-controls-panel {
         background-color: var(--secondary-dark);
         border-radius: 8px;

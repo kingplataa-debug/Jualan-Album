@@ -3,185 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IHZAN SOPAN SHOP</title>
+  <title>IHZAN SOPAN SHOP | Premium Beats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --dark-blue: #0d47a1;
-      --dark-purple: #512da8;
-      --neon-blue: #29b6f6;
-      --neon-purple: #e040fb;
+      /* Tema Dark/Premium: Emas & Hitam Elegan */
+      --primary-dark: #121212; /* Hampir Hitam */
+      --secondary-dark: #1e1e1e; /* Abu-abu Gelap */
+      --accent-gold: #ffc107; /* Emas */
+      --accent-light-gold: #ffd54f; /* Emas Muda */
+      --text-light: #e0e0e0;
+      --text-dark: #333333;
     }
 
     body {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, var(--dark-blue), var(--dark-purple));
-      color: #fff;
+      /* Mengganti font ke Montserrat untuk kesan premium */
+      font-family: "Montserrat", sans-serif;
+      /* Mengganti background dengan gradien dark yang lebih halus */
+      background-color: var(--primary-dark);
+      color: var(--text-light);
       overflow-x: hidden;
     }
 
+    /* --- Header Elegan --- */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(6px);
+      padding: 20px 5%;
+      /* Background semi-transparan yang lebih gelap */
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     header h1 {
-      font-size: 1.5em;
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 1.6em;
+      font-weight: 800;
+      /* Logo dengan sentuhan Emas */
+      color: var(--accent-gold);
+      text-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
     }
 
     header a {
-      color: white;
+      color: var(--accent-gold);
       text-decoration: none;
-      font-weight: bold;
-      border: 2px solid transparent;
-      padding: 8px 16px;
-      border-radius: 8px;
-      animation: glow 3s infinite alternate;
+      font-weight: 600;
+      border: 1px solid var(--accent-gold);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    @keyframes glow {
-      0% { border-color: var(--neon-blue); }
-      100% { border-color: var(--neon-purple); }
+    header a:hover {
+      background-color: var(--accent-gold);
+      color: var(--text-dark);
     }
 
+    /* --- Hero Section & Judul --- */
     .hero {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 5%;
     }
 
     .hero h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      font-weight: 800;
+      color: var(--accent-light-gold);
+      letter-spacing: 1px;
     }
 
     .hero p {
-      font-size: 1.1em;
-      opacity: 0.9;
+      font-size: 1.2em;
+      opacity: 0.8;
+      margin-bottom: 40px;
     }
 
-    .audio-player {
-      margin-top: 30px;
+    /* --- Pemutar Audio yang Diperbarui (Elegan) --- */
+    .audio-player-container {
+      margin: 40px auto 30px;
+      width: 90%;
+      max-width: 500px;
+      /* Background pemutar yang lebih gelap */
+      background: var(--secondary-dark);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 193, 7, 0.2); /* Sedikit batas emas */
     }
 
-    audio {
-      width: 80%;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(41, 182, 246, 0.5);
+    /* Menyembunyikan kontrol bawaan dan menyesuaikannya dengan CSS */
+    .audio-player-container audio {
+      display: block; /* Pastikan audio memenuhi container */
+      width: 100%;
+      background: none;
     }
 
+    /* Menargetkan kontrol bawaan di browser (hanya contoh styling, browser mungkin berbeda) */
+    .audio-player-container audio::-webkit-media-controls-panel {
+        background-color: var(--secondary-dark);
+        border-radius: 8px;
+        border: none;
+    }
+
+    .audio-player-container audio::-webkit-media-controls-play-button {
+        color: var(--accent-gold);
+    }
+
+    .audio-player-container audio::-webkit-media-controls-timeline {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+    
+    /* Harga */
     .price {
-      margin-top: 25px;
-      font-size: 1.5em;
-      font-weight: bold;
+      margin-top: 30px;
+      font-size: 2em;
+      font-weight: 800;
+      color: var(--accent-gold);
+      letter-spacing: 2px;
     }
 
+    /* --- Tombol WhatsApp Premium --- */
     .whatsapp-btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
+      margin-top: 25px;
+      padding: 15px 40px;
       font-size: 1.2em;
       font-weight: 600;
-      color: white;
+      color: var(--text-dark);
       text-decoration: none;
-      border-radius: 10px;
-      animation: colorShift 4s infinite alternate;
-      transition: transform 0.3s;
+      border-radius: 5px;
+      /* Mengganti animasi warna neon ke warna emas yang elegan */
+      background-color: var(--accent-gold);
+      box-shadow: 0 0 10px rgba(255, 193, 7, 0.7);
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
     .whatsapp-btn:hover {
-      transform: scale(1.05);
+      transform: translateY(-2px);
+      background-color: var(--accent-light-gold);
+      box-shadow: 0 5px 15px rgba(255, 193, 7, 0.8);
     }
 
-    @keyframes colorShift {
-      0% { background-color: var(--neon-blue); box-shadow: 0 0 15px var(--neon-blue); }
-      100% { background-color: var(--neon-purple); box-shadow: 0 0 15px var(--neon-purple); }
-    }
-
+    /* --- Benefit List Elegan --- */
     .benefits {
-      padding: 40px 20px;
+      padding: 60px 5%;
       text-align: center;
-    }
-
-    .benefits h3 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-    }
-
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .benefits li {
-      margin: 10px 0;
-      padding: 10px 15px;
-      border: 2px solid var(--neon-blue);
-      border-radius: 8px;
-      transition: border-color 3s;
-      animation: borderColor 3s infinite alternate;
-    }
-
-    @keyframes borderColor {
-      0% { border-color: var(--neon-blue); }
-      100% { border-color: var(--neon-purple); }
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.4);
-      margin-top: 40px;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>Ihzan Sopan Shop</h1>
-    <a href="https://wa.me/6285753225113?text=Halo%20Admin%20ihzan%20sopan%20Shop,%20saya%20tertarik%20dengan%20produk%20Anda!"
-      target="_blank">Hubungi WA</a>
-  </header>
-
-  <section class="hero">
-    <h2>🔥 Tabola Bale X Pica Pica X Stecu</h2>
-    <p>Dengarkan preview musik, sebelum membeli!</p>
-
-    <div class="audio-player">
-      <audio controls src="rip.mp3"></audio>
-    </div>
-
-    <div class="price">Rp 200.000</div>
-    <a class="whatsapp-btn"
-       href="https://wa.me/6285753225113?text=Halo%20Admin,%20saya%20ingin%20beli%20beat%20ini!"
-       target="_blank">Beli Sekarang via WhatsApp</a>
-  </section>
-
-  <section class="benefits">
-    <h3>Apa yang Anda Dapatkan?</h3>
-    <ul>
-      <li>🎵 Lisensi Eksklusif</li>
-      <li>📂 Stem Files (Track Terpisah)</li>
-      <li>💾 Kualitas WAV & MP3</li>
-      <li>🚀 Free Mixing</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Ihzan Sopan Shop | Follow kami di Instagram & YouTube</p>
-  </footer>
-</body>
-</html>
+      background
